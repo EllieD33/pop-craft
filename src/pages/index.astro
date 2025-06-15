@@ -1,0 +1,11 @@
+---
+import Header from '../components/Header.astro';
+import Welcome from '../components/Welcome.astro';
+import Layout from '../layouts/BaseLayout.astro';
+import siteConfig from '../content/siteConfig';
+---
+
+<Layout title={siteConfig.title}>
+	<Header />
+	<Welcome />
+</Layout>

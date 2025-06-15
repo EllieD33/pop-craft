@@ -1,0 +1,125 @@
+:root {
+  /* Colour Variables */
+  /* Monotone Palette */
+  --color-white: #fafafa;
+  --color-light-gray: #dbdbdb;
+  --color-medium-gray: #8a8a8a;
+  --color-dark-gray: #4f4f4f;
+  --color-black: #262626;
+
+  /* Accent Color */
+  --color-accent-red: #5fa;
+
+  /* Semantic Colors */
+  --color-background: var(--color-white);
+  --color-surface: var(--color-light-gray);
+  --color-text-primary: var(--color-black);
+  --color-text-secondary: var(--color-dark-gray);
+  --color-text-muted: var(--color-medium-gray);
+  --color-border: var(--color-medium-gray);
+  --color-accent: var(--color-accent-red);
+
+  /* Typography */
+  --font-heading-primary: "Rubik", sans-serif;
+  --font-heading-secondary: "Quicksand", sans-serif;
+  --font-body: "Karla", sans-serif;
+  --font-mono: "Fira Code", monospace;
+  --font-accent: "Pacifico", cursive;
+
+  /* Layout */
+  --grid-unit: 8px;
+  --max-width: 1200px;
+  --sidebar-width: 320px;
+  --content-padding: calc(var(--grid-unit) * 3);
+}
+
+/* Reset and Base Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text-primary);
+  background-color: var(--color-background);
+}
+
+body {
+  min-height: 100vh;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-accent);
+  margin-bottom: calc(var(--grid-unit) * 2);
+}
+
+h1 {
+  font-family: var(--font-heading-primary);
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.15em;
+  margin-bottom: calc(var(--grid-unit) * 4);
+}
+
+h2 {
+  font-family: var(--font-heading-secondary);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.1em;
+}
+
+h3 {
+  font-family: var(--font-heading-secondary);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: 0.08em;
+}
+
+p {
+  margin-bottom: calc(var(--grid-unit) * 2);
+  font-size: 1.125rem;
+}
+
+/* Links */
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover,
+a:focus {
+  color: var(--color-text-primary);
+  text-decoration: underline;
+}
+
+/* Lists */
+ul,
+ol {
+  margin-bottom: calc(var(--grid-unit) * 2);
+  padding-left: calc(var(--grid-unit) * 3);
+}
+
+li {
+  margin-bottom: calc(var(--grid-unit) / 2);
+}
