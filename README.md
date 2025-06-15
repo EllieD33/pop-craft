@@ -1,6 +1,6 @@
 ![Logo](public/favicon.ico)
 
-# Missing Proof
+# Missing Proof°
 
 A blog celebrating the art of crafting delicious, alcohol-free drinks at home. This project showcases refreshing mocktails and premium soda recipes designed to delight every palate.
 
