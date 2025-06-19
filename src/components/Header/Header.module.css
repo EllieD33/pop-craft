@@ -1,0 +1,15 @@
+.navContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.siteName {
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.siteName:hover {
+    color: var(--color-accent);
+    text-decoration: none;
+}

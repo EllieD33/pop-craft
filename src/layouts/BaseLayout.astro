@@ -1,6 +1,8 @@
 ---
-const { title = "My Site" } = Astro.props;
+import Header from "@components/Header/Header.astro";
 import "../styles/global.css";
+import siteConfig from "@content/siteConfig";
+const { title = "My Site" } = Astro.props;
 ---
 
 <!doctype html>
@@ -17,6 +19,21 @@ import "../styles/global.css";
     />
   </head>
   <body>
-    <slot />
+    <Header title={siteConfig.title} />
+    <main>
+      <slot />
+    </main>
+    <script is:inline>
+      const hamburger = document.getElementById("hamburger");
+      const navList = document.getElementById("navList");
+
+      if (hamburger && navList) {
+        hamburger.addEventListener("click", () => {
+          navList.classList.toggle("expanded");
+        });
+      } else {
+        console.warn("Missing hamburger or navList element");
+      }
+    </script>
   </body>
 </html>
