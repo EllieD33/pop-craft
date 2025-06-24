@@ -10,7 +10,7 @@ const { title = "My Site" } = Astro.props;
   <nav class={styles.navContainer}>
     <Hamburger />
     <Navigation />
-    <div><a class=`heading-xl ${styles.siteName}` href="/">{title}</a></div>
+    <div class={styles.siteNameContainer}><a class=`heading-xl ${styles.siteName}` href="/">{title}</a></div>
   </nav>
   <div class="" id="navShadow"></div>
 </header>

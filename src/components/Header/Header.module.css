@@ -2,7 +2,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 var(--grid-unit);
+  padding: calc(var(--grid-unit) * 2);
+  height: auto;
+  width: auto;
 }
 
 .siteName {
@@ -10,7 +12,16 @@
   text-transform: uppercase;
 }
 
-.siteName:hover {
+.siteName:hover,
+.siteName:active,
+.siteName:focus {
   color: var(--color-accent);
   text-decoration: none;
+}
+
+@media (max-width: 496px) {
+  .siteNameContainer {
+    padding-left: 40px;
+    text-align: center;
+  }
 }
