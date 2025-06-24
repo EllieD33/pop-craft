@@ -24,12 +24,22 @@ const { title = "My Site" } = Astro.props;
       <slot />
     </main>
     <script is:inline>
-      const hamburger = document.getElementById("hamburger");
+      const icon = document.getElementById("hamburger");
+      const icon1 = document.getElementById("lineA");
+      const icon2 = document.getElementById("lineB");
+      const icon3 = document.getElementById("lineC");
+      const nav = document.getElementById("nav");
       const navList = document.getElementById("navList");
+      const navShadow = document.getElementById("navShadow");
 
-      if (hamburger && navList) {
-        hamburger.addEventListener("click", () => {
-          navList.classList.toggle("expanded");
+      if (icon && nav) {
+        icon.addEventListener("click", () => {
+            icon1.classList.toggle("a");
+            icon2.classList.toggle("c");
+            icon3.classList.toggle("b");
+            nav.classList.toggle("show");
+            navList.classList.toggle("expanded");
+            navShadow.classList.toggle("slide");
         });
       } else {
         console.warn("Missing hamburger or navList element");

@@ -70,7 +70,8 @@ h6 {
   margin-bottom: calc(var(--grid-unit) * 2);
 }
 
-h1, .heading-xl {
+h1,
+.heading-xl {
   font-family: var(--font-heading-primary);
   font-size: 2.5rem;
   font-weight: 700;
@@ -139,21 +140,68 @@ li {
 }
 
 /* Navigation */
+#nav {
+  background: #0288d1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  z-index: 10;
+  opacity: 0;
+  transition: all 600ms cubic-bezier(0.62, 0.04, 0.3, 1.56);
+  transition-delay: 100ms;
+}
+
+#nav.show {
+  width: 75%;
+  opacity: 1;
+}
+
 #navList {
   padding: 0;
   margin: 0;
   gap: calc(var(--grid-unit) * 3);
   font-size: 1.5rem;
-  max-height: 0.1px;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  opacity: 0;
-  transition: all 0.3s ease
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 30%;
+  left: 40%;
 }
 
 #navList.expanded {
   display: flex;
   opacity: 1;
-  max-height: 500px;
+}
+
+.a {
+  top: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+.b {
+  top: 50%;
+  transform: translateX(-50%) rotate(-45deg);
+}
+.c {
+  opacity: 0;
+}
+
+#navShadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #64b5f6;
+  height: 100%;
+  width: 0%;
+  transition: all 500ms cubic-bezier(0.62, 0.04, 0.3, 1.8);
+  transition-delay: 50ms;
+  z-index: 5;
+  opacity: 1;
+}
+#navShadow.slide {
+  width: 75%;
+  opacity: 1;
 }
