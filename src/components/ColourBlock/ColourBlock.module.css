@@ -1,0 +1,16 @@
+.colourBlock {
+    width: 100vw;
+    height: 100vh;
+}
+
+.green {
+    background-color: var(--color-accent);
+}
+
+.darkGray {
+    background-color: var(--color-text-secondary);
+}
+
+.lightGray {
+    background-color: var(--color-surface);
+}

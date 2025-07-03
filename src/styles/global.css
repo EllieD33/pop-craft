@@ -59,7 +59,7 @@ body {
 }
 
 main {
-  max-width: var(--max-width);
+  /* max-width: var(--max-width); */
   align-items: center;
   align-self: center;
 }
