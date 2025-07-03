@@ -1,0 +1,28 @@
+---
+import type { HTMLAttributes, HTMLTag } from "astro/types";
+
+export type TextProps<T extends HTMLTag = "p"> = HTMLAttributes<T> & {
+  as?: T;
+  variant?: "heading1" | "heading2" | "heading3" | "body" | "caption";
+  className?: string;
+};
+
+const props = Astro.props as TextProps;
+const { as = "p", variant = "body", className = "", ...rest } = props;
+
+const Tag = as;
+
+const variantClassMap = {
+  heading1: "heading-xl",
+  heading2: "heading-lg",
+  heading3: "heading-md",
+  body: "body",
+  caption: "caption",
+};
+
+const variantClass = variantClassMap[variant] ?? "";
+---
+
+<Tag class={`${variantClass} ${className}`} {...rest}>
+  <slot />
+</Tag>

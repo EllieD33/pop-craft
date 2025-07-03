@@ -1,0 +1,15 @@
+---
+import Text from "@components/Text/Text.astro"
+import styles from "./Button.module.css"
+import type { HTMLAttributes } from "astro/types"
+
+export interface ButtonProps extends HTMLAttributes<'button'> {
+  buttonText: string;
+}
+const props = Astro.props 
+---
+
+
+<button class={styles.button}>
+  <Text as="span">{props.buttonText}</Text>
+</button>

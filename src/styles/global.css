@@ -75,7 +75,6 @@ h6 {
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--color-accent);
-  margin-bottom: calc(var(--grid-unit) * 2);
 }
 
 h1,
@@ -85,10 +84,10 @@ h1,
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: 0.15em;
-  margin-bottom: calc(var(--grid-unit) * 4);
 }
 
-h2 {
+h2,
+.heading-lg {
   font-family: var(--font-heading-secondary);
   font-size: 2rem;
   font-weight: 700;
@@ -96,7 +95,8 @@ h2 {
   letter-spacing: 0.1em;
 }
 
-h3 {
+h3,
+.heading-md {
   font-family: var(--font-heading-secondary);
   font-size: 1.5rem;
   font-weight: 600;
@@ -104,9 +104,15 @@ h3 {
   letter-spacing: 0.08em;
 }
 
-p {
-  margin-bottom: calc(var(--grid-unit) * 2);
+p,
+.body {
   font-size: 1.125rem;
+  display: inline-block;
+}
+
+small,
+.caption {
+  font-size: 1rem;
 }
 
 /* Links */
