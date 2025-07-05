@@ -16,3 +16,7 @@
 .lightGray {
     background-color: var(--color-surface);
 }
+
+.black {
+    background-color: var(--color-black);
+}

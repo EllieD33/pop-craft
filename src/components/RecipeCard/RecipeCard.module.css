@@ -4,7 +4,42 @@
   background-color: aliceblue;
   border-radius: 20px;
   height: fit-content;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
 }
+
+/* Optional: layer content above sheen */
+.recipeCardWrapper > * {
+  position: relative;
+  z-index: 1;
+}
+
+.recipeCardWrapper::after {
+  content: "";
+  position: absolute;
+  top: -550px;
+  left: -75px;
+  width: 150px;
+  height: 300%;
+  background: linear-gradient(
+    to right,
+    rgba(198, 198, 198, 0.081) 0%,
+    rgba(243, 243, 243, 0.8) 50%,
+    rgba(210, 210, 210, 0.242) 100%
+  );
+  opacity: 0.8;
+  transform: rotate(35deg);
+  transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+  z-index: 0;
+  pointer-events: none;
+}
+
+
+.recipeCardWrapper:hover::after {
+  left: 150%;
+}
+
 
 .recipeCardWrapper:hover {
   cursor: pointer;
