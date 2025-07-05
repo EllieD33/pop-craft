@@ -1,0 +1,17 @@
+---
+import styles from "./Link.module.css"
+import type { HTMLAttributes } from "astro/types";
+
+interface LinkProps extends HTMLAttributes<'a'> {
+    isExternalLink: boolean;
+}
+const props = Astro.props as LinkProps
+const externalAttributes = props.isExternalLink ? {
+ rel: "noopener noreferrer",
+ target: "_blank"
+} : {}
+---
+
+<a href={props.href} {...externalAttributes} class:list={[styles.link, props.class]} >
+    <slot />
+</a>

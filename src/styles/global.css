@@ -108,6 +108,7 @@ p,
 .body {
   font-size: 1.125rem;
   display: inline-block;
+  color: var(--color-text-primary);
 }
 
 small,
@@ -122,11 +123,11 @@ a {
   transition: color 0.2s ease;
 }
 
-a:hover,
+/* a:hover,
 a:focus {
   color: var(--color-text-primary);
   text-decoration: underline;
-}
+} */
 
 /* Lists */
 ul,

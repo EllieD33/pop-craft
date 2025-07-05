@@ -1,0 +1,4 @@
+.horizontalLine {
+    display: block;
+    flex-grow: 1;
+  }

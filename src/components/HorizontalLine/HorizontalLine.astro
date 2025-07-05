@@ -1,0 +1,25 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import styles from "./HorizontalLine.module.css"
+
+export interface HorizontalLineProps extends HTMLAttributes<'div'> {
+    thickness?: string;
+    color?: string;
+    width?: string;
+}
+
+const {
+    thickness = '2px',
+    color = 'currentColor',
+    width = '100%',
+    class: className = '',
+    ...rest
+} = Astro.props as HorizontalLineProps;
+
+---
+
+<div
+  {...rest}
+  class:list={[styles.horizontalLine, className]}
+  style={`height: ${thickness}; background-color: ${color}; width: ${width};`}
+/>

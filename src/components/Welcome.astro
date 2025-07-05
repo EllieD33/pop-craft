@@ -1,11 +1,21 @@
 ---
-import Button from "./Button/Button.astro"
-import ColourBlock from "./ColourBlock/ColourBlock.astro"
-import Text from "./Text/Text.astro"
+import Button from "./Button/Button.astro";
+import ColourBlock from "./ColourBlock/ColourBlock.astro";
+import RecipeCard from "./RecipeCard/RecipeCard.astro";
+import Text from "./Text/Text.astro";
 ---
 
 <section>
-	<ColourBlock />
-	<Text>Welcome to the site</Text>
-	<Button buttonText="Click Me!" />
+  <ColourBlock>
+    <RecipeCard
+      heading="Long Island Iced Tea"
+      description="An unusual blend of vodka, gin, tequila, rum and orange liqueur with cola, the Long Island Iced Tea flavours of vanilla and lightly tannic wood"
+	  tags={['Cola', 'Tequila', 'Rum', 'Vodka']}
+      imageSrc="https://img.freepik.com/free-photo/tequila-sunrise-with-lemon-slice-salt_140725-1026.jpg?ga=GA1.1.759099019.1742639406&semt=ais_items_boosted&w=740"
+	  imageAltText="Long island iced tea with a lemon slice and herb garnish"
+	  pageURL="/recipes/long-island-iced-tea"
+    />
+  </ColourBlock>
+  <Text>Welcome to the site</Text>
+  <Button buttonText="Click Me!" />
 </section>

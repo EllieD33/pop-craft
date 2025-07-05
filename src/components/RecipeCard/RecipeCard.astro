@@ -1,0 +1,51 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import Text from "@components/Text/Text.astro";
+import Image from "astro/components/Image.astro";
+import Link from "@components/Link/Link.astro";
+import HorizontalLine from "@components/HorizontalLine/HorizontalLine.astro";
+import ArrowRight from "@components/icons/ArrowRight.astro";
+
+import styles from "./Recipecard.module.css";
+import "@styles/global.css";
+
+export interface RecipeCardProps extends HTMLAttributes<"article"> {
+  heading: string;
+  description: string;
+  tags: string[];
+  imageSrc: string;
+  imageAltText: string;
+  pageUrl: string;
+}
+const props = Astro.props;
+
+const tags = props.tags.join(" | ")
+---
+
+<article class={styles.recipeCardWrapper}>
+  <Link
+    href={props.pageUrl}
+    class={styles.recipeCardContents}
+    isExternalLink={false}
+  >
+    <div class:list={["flex-col", styles.recipeCardLeft]}>
+      <Text>{tags.toUpperCase()}</Text>
+      <Image
+        src={props.imageSrc}
+        alt={props.imageAltText}
+        class={styles.image}
+        width={300}
+        height={300}
+      />
+    </div>
+    <div class={styles.recipeTextContent}>
+      <Text as="h2" class={styles.headingText}>{props.heading}</Text>
+      <Text>{props.description}</Text>
+      <div class:list={['flex-center', styles.lineIconContainer]}>
+          <HorizontalLine />
+          <ArrowRight class={styles.icon} />
+      </div>
+    </div>
+  </Link>
+</article>
