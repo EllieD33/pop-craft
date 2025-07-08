@@ -1,9 +1,52 @@
 ---
-import Welcome from '@components/Welcome.astro';
 import Layout from '@layouts/BaseLayout.astro';
 import siteConfig from '@content/siteConfig';
+import TextHero from '@components/Heroes/TextHero/TextHero.astro';
+import ColourBlock from '@components/ColourBlock/ColourBlock.astro';
+import FlexGallery from "@components/Gallery/FlexGallery.astro";
+import RecipeCard from "@components/RecipeCard/RecipeCard.astro";
 ---
 
 <Layout title={siteConfig.title}>
-	<Welcome />
+	<ColourBlock>
+		<TextHero heading="Missing Proof — Not Missing a Thing" subHeading="Alcohol-free cocktails and sodas that bring the flavor, not the fog." />
+	</ColourBlock>
+	<ColourBlock colour="white">
+    <FlexGallery>
+      <RecipeCard
+        heading="Long Island Iced Tea"
+        description="An unusual blend of vodka, gin, tequila, rum and orange liqueur with cola, the Long Island Iced Tea flavours of vanilla and lightly tannic wood"
+        tags={["Cola", "Tequila", "Rum", "Vodka"]}
+        imageSrc="https://img.freepik.com/free-photo/tequila-sunrise-with-lemon-slice-salt_140725-1026.jpg?ga=GA1.1.759099019.1742639406&semt=ais_items_boosted&w=740"
+        imageAltText="Long island iced tea with a lemon slice and herb garnish"
+        pageURL="/recipes/long-island-iced-tea"
+      />
+      <RecipeCard
+        heading="Margarita"
+        description="A classic cocktail featuring tequila, lime juice, and orange liqueur served with a salted rim. Refreshing, citrusy, and perfect for warm weather."
+        tags={["Tequila", "Lime", "Orange Liqueur"]}
+        imageSrc="https://img.freepik.com/free-photo/fresh-margarita-cocktail-glass_140725-4728.jpg"
+        imageAltText="Classic margarita with salted rim and lime wedge"
+        pageURL="/recipes/margarita"
+      />
+
+      <RecipeCard
+        heading="Mojito"
+        description="A Cuban highball with white rum, fresh mint, lime, sugar, and soda water. A cool and crisp drink ideal for summer evenings."
+        tags={["Rum", "Mint", "Lime", "Soda"]}
+        imageSrc="https://img.freepik.com/free-photo/mojito-cocktail-with-lime-mint_140725-4574.jpg"
+        imageAltText="Mojito cocktail with fresh mint and lime in glass"
+        pageURL="/recipes/mojito"
+      />
+
+      <RecipeCard
+        heading="Old Fashioned"
+        description="A timeless mix of bourbon, bitters, and sugar with a twist of orange peel. Smooth, strong, and aromatic."
+        tags={["Bourbon", "Bitters", "Sugar"]}
+        imageSrc="https://img.freepik.com/free-photo/old-fashioned-cocktail_140725-10822.jpg"
+        imageAltText="Old fashioned cocktail with orange peel in a glass"
+        pageURL="/recipes/old-fashioned"
+      />
+	</FlexGallery>
+  </ColourBlock>
 </Layout>

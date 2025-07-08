@@ -2,14 +2,18 @@
   max-width: 40%;
   padding: calc(var(--grid-unit) * 2);
   background-color: aliceblue;
+  box-shadow: 0 6px 20px rgba(0, 64, 128, 0.12);
   border-radius: 20px;
+  min-height: 350px;
   height: fit-content;
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
 }
 
-/* Optional: layer content above sheen */
 .recipeCardWrapper > * {
   position: relative;
   z-index: 1;
@@ -35,14 +39,14 @@
   pointer-events: none;
 }
 
-
 .recipeCardWrapper:hover::after {
   left: 150%;
 }
 
-
 .recipeCardWrapper:hover {
   cursor: pointer;
+  box-shadow: 0 12px 30px rgba(0, 64, 128, 0.18);
+  transform: translateY(-4px);
 }
 
 .recipeCardContents {
@@ -66,11 +70,6 @@
 .image {
   border-bottom-left-radius: 20px;
   border-top-left-radius: 20px;
-  transition: opacity 0.4s ease-in-out;
-}
-
-.recipeCardWrapper:hover .image {
-  opacity: 0.85;
 }
 
 .lineIconContainer {

@@ -1,0 +1,26 @@
+---
+import Text from "@components/Text/Text.astro";
+import type { HTMLAttributes } from "astro/types";
+
+import styles from "./TextHero.module.css"
+import "@styles/global.css"
+import ArrowDown from "@components/icons/ArrowDown.astro";
+
+interface TextHeroProps extends HTMLAttributes<'section'> {
+    heading: string;
+    subHeading: string;
+}
+
+const props = Astro.props as TextHeroProps;
+---
+
+<section class:list={["flex-col", styles.hero]}>
+  <div class:list={["flex-col", "flex-center", styles.gap]}>
+      <Text as="h1" variant="heading1" class="text-centred">{props.heading}</Text>
+      <Text class:list={["text-centred", "heading-md", styles.whiteText]}>{props.subHeading}</Text>
+  </div>
+  <div class:list={["flex-col", "flex-center", styles.whiteText, styles.gap]}>
+    <Text class={styles.whiteText}>Scroll Down</Text>
+    <ArrowDown class={styles.bounce} />
+  </div>
+</section>

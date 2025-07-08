@@ -1,8 +1,6 @@
 .colourBlock {
     width: 100vw;
     height: 100vh;
-    display: flex;
-    justify-content: center;
 }
 
 .green {
@@ -19,4 +17,8 @@
 
 .black {
     background-color: var(--color-black);
+}
+
+.white {
+    background-color: whitesmoke;
 }

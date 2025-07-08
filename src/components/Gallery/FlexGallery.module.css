@@ -1,0 +1,7 @@
+.gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: calc(var(--grid-unit) * 3);
+    padding-top: 30px;
+}

@@ -1,0 +1,28 @@
+.hero {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.whiteText {
+    color: aliceblue;
+}
+
+.gap {
+    gap:calc(var(--grid-unit) * 2)
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.bounce {
+  animation: bounce 1.5s ease-in-out infinite;
+}

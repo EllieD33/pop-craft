@@ -2,6 +2,7 @@ header {
   position: sticky;
   top: 0;
   background-color: #262626;
+  z-index: 20;
 }
 
 .navContainer {

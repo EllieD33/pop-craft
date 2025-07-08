@@ -1,7 +1,15 @@
 ---
-import styles from "./ColourBlock.module.css"
+import type { HTMLAttributes } from "astro/types";
+import styles from "./ColourBlock.module.css";
+
+interface ColourBlockProps extends HTMLAttributes<'section'> {
+  colour: "green" | "lightGray" | "darkGray" | "white" | "black";
+}
+
+const props = Astro.props as ColourBlockProps;
+const classList = [styles.colourBlock, styles[props.colour || "black"]];
 ---
 
-<section class:list={[styles.colourBlock, styles.black]}>
-    <slot />
+<section class:list={classList}>
+  <slot />
 </section>
