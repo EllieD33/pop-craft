@@ -1,0 +1,25 @@
+.whiteText {
+  color: aliceblue;
+}
+
+.overlay {
+  gap: calc(var(--grid-unit) * 2);
+  z-index: 2;
+}
+
+.image {
+  filter: brightness(50%);
+  height: 90vh;
+  width: 100vw;
+}
+
+.container {
+  display: grid;
+  grid-template: "container";
+  place-items: center;
+  place-content: center;
+}
+
+.container > * {
+  grid-area: container;
+}

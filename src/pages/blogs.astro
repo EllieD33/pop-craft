@@ -1,0 +1,29 @@
+---
+import Layout from "@layouts/BaseLayout.astro";
+import siteConfig from "@content/siteConfig";
+import ColourBlock from "@components/ColourBlock/ColourBlock.astro";
+import ImageHero from "@components/Heroes/ImageHero/ImageHero.astro";
+import Typewriter from "@components/animations/Typewriter/Typewriter.astro";
+import Text from "@components/Text/Text.astro";
+
+import "@styles/global.css"
+
+import lemonCocktail from "@assets/lemon-cocktail.jpg";
+---
+
+<Layout title={siteConfig.title}>
+  <ColourBlock>
+    <ImageHero
+      imageSrc={lemonCocktail}
+      imageAltText="Three colourful cocktails displayed against a black background"
+    >
+    <Text as="h1" variant="heading1" class="text-centred">Missing Proof — Not Missing a Thing</Text>
+    <div>
+        <Text colourOverride="white" class:list={["text-centred", "heading-md"]}
+          >Alcohol-free cocktails and sodas that</Text
+        ><Typewriter text="bring the flavour, not the fog." textColour="white" class="heading-md" />
+    </div>
+
+</ImageHero>
+  </ColourBlock>
+</Layout>

@@ -4,11 +4,12 @@ import type { HTMLAttributes, HTMLTag } from "astro/types";
 export type TextProps<T extends HTMLTag = "p"> = HTMLAttributes<T> & {
   as?: T;
   variant?: "heading1" | "heading2" | "heading3" | "body" | "caption";
+  colourOverride?: "secondary" | "white" | "green";
   className?: string;
 };
 
 const props = Astro.props as TextProps;
-const { as = "p", variant = "body", className = "", ...rest } = props;
+const { as = "p", variant = "body", className = "", colourOverride, ...rest } = props;
 
 const Tag = as;
 
@@ -19,10 +20,21 @@ const variantClassMap = {
   body: "body",
   caption: "caption",
 };
+const colourMap = {
+  secondary: "--color-text-secondary",
+  white: "--color-white",
+  green: "--color-accent"
+}
 
 const variantClass = variantClassMap[variant] ?? "";
+const textColour = colourOverride ? `var(${colourMap[colourOverride]})` : "";
+
+const parsedRest = {
+  ...rest,
+  ...(colourOverride && {style: {color: textColour}})
+}
 ---
 
-<Tag class={`${variantClass} ${className}`} {...rest}>
+<Tag class={`${variantClass} ${className}`} {...parsedRest}>
   <slot />
 </Tag>

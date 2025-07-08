@@ -1,0 +1,26 @@
+---
+import Picture from "astro/components/ResponsivePicture.astro"
+import Text from "@components/Text/Text.astro";
+
+import styles from "./ImageHero.module.css";
+
+import type { HTMLAttributes } from "astro/types";
+import Typewriter from "@components/animations/Typewriter/Typewriter.astro";
+
+export interface ImageHeroProps extends HTMLAttributes<"section"> {
+  heading: string;
+  subHeading: string;
+  imageSrc: string;
+  imageAltText: string;
+}
+const props = Astro.props;
+---
+
+<section class:list={[styles.container]}>
+  <div class:list={["flex-col", "flex-center", styles.overlay]}>
+    <slot />
+    <Typewriter />
+    
+  </div>
+  <Picture src={props.imageSrc} alt={props.imageAltText} class={styles.image} />
+</section>
