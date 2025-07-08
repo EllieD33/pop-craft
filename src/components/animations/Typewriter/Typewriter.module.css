@@ -1,0 +1,17 @@
+.type {
+  display:inline-flex;
+}
+.type span {
+  word-break: break-all;
+  height: 1.3em;
+  width:0%;
+  overflow: hidden;
+  animation:typewriter 2s linear infinite alternate;
+}
+.type span:before {
+  content:" ";
+  display:inline-block;
+}
+@keyframes typewriter{
+  90%,100% {width:100%}
+}

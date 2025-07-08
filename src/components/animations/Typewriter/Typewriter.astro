@@ -1,0 +1,19 @@
+---
+import Text, { type TextProps } from "@components/Text/Text.astro";
+
+import styles from "./Typewriter.module.css"
+
+import type { HTMLAttributes } from "astro/types";
+export interface TypewriterProps extends HTMLAttributes<"span"> {
+    text: string;
+    textColour?: TextProps['colourOverride']
+}
+const props = Astro.props;
+
+const style = {
+  ...(props.textColour && {style: {color: props.textColour}})
+
+}
+---
+
+<span class={styles.type}><Text as="span" class={props.class} {...style}>{props.text}</Text></span> 
