@@ -1,0 +1,35 @@
+.marquee {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: calc(var(--grid-unit) * 6);
+}
+
+.marqueeContent {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-around;
+  min-width: 100%;
+  gap: calc(var(--grid-unit) * 6);
+  list-style: none;
+  animation: scroll 10s linear infinite;
+}
+
+.marqueeItem {
+    background-color: var(--color-light-gray);
+    padding: calc(var(--grid-unit) * 2) calc(var(--grid-unit) * 6);
+    border-radius: var(--grid-unit);
+}
+
+.marqueeIcon {
+    font-size: 50px;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% -  calc(var(--grid-unit) * 6)));
+  }
+}

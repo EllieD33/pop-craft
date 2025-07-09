@@ -13,6 +13,12 @@ const { title = "My Site" } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
 
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
+
     <title>{title}</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&family=Quicksand:wght@400;600&family=Karla:wght@400;700&family=Fira+Code:wght@400;600&family=Pacifico&display=swap"
@@ -35,12 +41,12 @@ const { title = "My Site" } = Astro.props;
 
       if (icon && nav) {
         icon.addEventListener("click", () => {
-            icon1.classList.toggle("a");
-            icon2.classList.toggle("c");
-            icon3.classList.toggle("b");
-            nav.classList.toggle("show");
-            navList.classList.toggle("expanded");
-            navShadow.classList.toggle("slide");
+          icon1.classList.toggle("a");
+          icon2.classList.toggle("c");
+          icon3.classList.toggle("b");
+          nav.classList.toggle("show");
+          navList.classList.toggle("expanded");
+          navShadow.classList.toggle("slide");
         });
       } else {
         console.warn("Missing hamburger or navList element");
