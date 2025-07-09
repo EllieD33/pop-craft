@@ -1,17 +1,41 @@
 ---
-import Layout from '@layouts/BaseLayout.astro';
-import siteConfig from '@content/siteConfig';
-import TextHero from '@components/Heroes/TextHero/TextHero.astro';
-import ColourBlock from '@components/ColourBlock/ColourBlock.astro';
+import Layout from "@layouts/BaseLayout.astro";
+import siteConfig from "@content/siteConfig";
+import TextHero from "@components/Heroes/TextHero/TextHero.astro";
+import ColourBlock from "@components/ColourBlock/ColourBlock.astro";
 import FlexGallery from "@components/Gallery/FlexGallery.astro";
 import RecipeCard from "@components/RecipeCard/RecipeCard.astro";
+import ImageHero from "@components/Heroes/ImageHero/ImageHero.astro";
+import Text from "@components/Text/Text.astro";
+import Typewriter from "@components/animations/Typewriter/Typewriter.astro";
+import Marqee from "@components/animations/Marqee/Marqee.astro";
+
+import lemonCocktail from "@assets/lemon-cocktail.jpg";
+import CentredFlex from "@components/Containers/CentredFlex/CentredFlex.astro";
 ---
 
 <Layout title={siteConfig.title}>
-	<ColourBlock>
-		<TextHero heading="Missing Proof — Not Missing a Thing" subHeading="Alcohol-free cocktails and sodas that bring the flavor, not the fog." />
-	</ColourBlock>
-	<ColourBlock colour="white">
+  <ImageHero
+    imageSrc={lemonCocktail}
+    imageAltText="Three colourful cocktails displayed against a black background"
+  >
+    <Text as="h1" variant="heading1" class="text-centred"
+      >Missing Proof — Not Missing a Thing</Text
+    >
+    <div>
+      <Text colourOverride="white" class:list={["text-centred", "heading-md"]}
+        >Alcohol-free cocktails and sodas that</Text
+      ><Typewriter
+        text="bring the flavour, not the fog."
+        textColour="white"
+        class="heading-md"
+      />
+    </div>
+  </ImageHero>
+  <!-- <ColourBlock colour="white"> -->
+  <CentredFlex style={{paddingTop: "40px"}}>
+    <Text as="h2" variant="heading2" class="text-centred">Trending Recipes</Text
+    >
     <FlexGallery>
       <RecipeCard
         heading="Long Island Iced Tea"
@@ -47,6 +71,10 @@ import RecipeCard from "@components/RecipeCard/RecipeCard.astro";
         imageAltText="Old fashioned cocktail with orange peel in a glass"
         pageURL="/recipes/old-fashioned"
       />
-	</FlexGallery>
-  </ColourBlock>
+    </FlexGallery>
+  </CentredFlex>
+  <!-- </ColourBlock> -->
+   <div style={{paddingTop: "40px"}}>
+     <Marqee />
+   </div>
 </Layout>

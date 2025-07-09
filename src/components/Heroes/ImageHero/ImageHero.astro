@@ -1,11 +1,12 @@
 ---
-import Picture from "astro/components/ResponsivePicture.astro"
+import Picture from "astro/components/ResponsivePicture.astro";
 import Text from "@components/Text/Text.astro";
 
 import styles from "./ImageHero.module.css";
 
 import type { HTMLAttributes } from "astro/types";
 import Typewriter from "@components/animations/Typewriter/Typewriter.astro";
+import ArrowDown from "@components/icons/ArrowDown.astro";
 
 export interface ImageHeroProps extends HTMLAttributes<"section"> {
   heading: string;
@@ -17,10 +18,14 @@ const props = Astro.props;
 ---
 
 <section class:list={[styles.container]}>
-  <div class:list={["flex-col", "flex-center", styles.overlay]}>
-    <slot />
-    <Typewriter />
-    
+  <div class:list={[styles.overlay]}>
+    <div class={styles.overlayCell}>
+      <slot />
+    </div>
+    <div class:list={["flex-col", "flex-center", styles.whiteText, styles.overlayCell]}>
+      <Text class={styles.whiteText}>Scroll Down</Text>
+      <ArrowDown class={styles.bounce} />
+    </div>
   </div>
   <Picture src={props.imageSrc} alt={props.imageAltText} class={styles.image} />
 </section>

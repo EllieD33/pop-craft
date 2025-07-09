@@ -2,7 +2,7 @@
   /* Colour Variables */
   /* Monotone Palette */
   --color-white: #fafafa;
-  --color-light-gray: #dbdbdb;
+  --color-light-gray: aliceblue;
   --color-medium-gray: #8a8a8a;
   --color-dark-gray: #4f4f4f;
   --color-black: #000000;
@@ -47,7 +47,7 @@ html {
   font-size: 16px;
   line-height: 1.6;
   color: var(--color-text-primary);
-  background-color: var(--color-background);
+  background-color: var(--color-black);
 }
 
 body {

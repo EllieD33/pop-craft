@@ -3,8 +3,11 @@
 }
 
 .overlay {
+  display: grid;
+  justify-items: center;
   gap: calc(var(--grid-unit) * 2);
   z-index: 2;
+  height: 100%;
 }
 
 .image {
@@ -22,4 +25,24 @@
 
 .container > * {
   grid-area: container;
+}
+
+.overlayCell {
+    gap:calc(var(--grid-unit) * 2);
+    align-self: flex-end;
+    justify-items: center;
+    margin-bottom: 30px
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.bounce {
+  animation: bounce 1.5s ease-in-out infinite;
 }
