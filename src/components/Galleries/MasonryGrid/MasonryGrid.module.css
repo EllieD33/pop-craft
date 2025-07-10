@@ -1,0 +1,16 @@
+.masonryGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 350px);
+  gap: 24px;
+  place-content: center;
+}
+
+.cell {
+  width: fit-content;
+  grid-row: span 2;
+}
+
+.wideCell {
+  grid-column: span 2;
+  grid-row: span 1;
+}

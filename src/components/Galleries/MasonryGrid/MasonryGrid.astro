@@ -1,0 +1,25 @@
+---
+import BlogCard, {
+  type BlogCardProps,
+} from "@components/Cards/BlogCard/BlogCard.astro";
+
+import styles from "./MasonryGrid.module.css";
+
+import type { HTMLAttributes } from "astro/types";
+
+interface MasonryGridProps extends HTMLAttributes<"div"> {
+  gridItems: BlogCardProps[];
+}
+
+const props = Astro.props as MasonryGridProps;
+---
+
+<div class={styles.masonryGrid}>
+  {
+    props.gridItems.map((card, index: number) => (
+      <div class:list={[styles.cell, card.wide && styles.wideCell]}>
+        <BlogCard {...card} />
+      </div>
+    ))
+  }
+</div>

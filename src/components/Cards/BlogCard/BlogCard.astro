@@ -2,14 +2,13 @@
 import Text from "@components/Text/Text.astro";
 import Picture from "astro/components/ResponsivePicture.astro";
 import Image from "astro/components/Image.astro";
+import ChipSet from "@components/ChipSet/ChipSet.astro";
 
 import type { HTMLAttributes } from "astro/types";
 
 import styles from "./BlogCard.module.css";
-import Chip from "@components/ChipSet/Chip/Chip.astro";
-import ChipSet from "@components/ChipSet/ChipSet.astro";
 
-export interface BlogCarProps extends HTMLAttributes<"article"> {
+export interface BlogCardProps extends HTMLAttributes<"article"> {
   author: {
     name: string;
     avatar: string;
@@ -20,19 +19,22 @@ export interface BlogCarProps extends HTMLAttributes<"article"> {
   summary: string;
   image: string;
   imageAlt: string;
+  wide?: boolean;
 }
 
 const props = Astro.props;
 ---
 
-<article class:list={[styles.outerCard]}>
+<article class:list={[styles.outerCard, props.wide && styles.wide]}>
   <div class={styles.imageContainer}>
     <Picture src={props.image} alt={props.imageAlt} class={styles.image} />
   </div>
   <div class:list={["flex-col", styles.detailsContainer]}>
     <ChipSet chips={props.tags} />
-    <Text as="h3" variant="heading-md">{props.heading}</Text>
-    <Text>{props.summary}</Text>
+    <div class:list={["flex-col", styles.detailsText]}>
+      <Text as="h3" variant="heading-md">{props.heading}</Text>
+      <Text>{props.summary}</Text>
+    </div>
     <div class:list={["flex", styles.authorDetailsContainer]}>
       <Image
         src={props.author.avatar}

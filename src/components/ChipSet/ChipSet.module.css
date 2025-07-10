@@ -1,3 +1,4 @@
 .chipSet {
-    gap: var(--grid-unit);
+  gap: var(--grid-unit);
+  padding-top: var(--grid-unit);
 }

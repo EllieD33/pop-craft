@@ -1,24 +1,11 @@
 ---
 import Layout from "@layouts/BaseLayout.astro";
-import BlogCard from "@components/Cards/BlogCard/BlogCard.astro";
 
 import siteConfig from "@content/siteConfig";
-import lewisHamilton from "@assets/lewisHamilton.jpg"
-
+import { blogItems } from "@content/blog";
+import MasonryGrid from "@components/Galleries/MasonryGrid/MasonryGrid.astro";
 ---
 
 <Layout title={siteConfig.title}>
-  <BlogCard
-    author={{
-      name: "James Hughes",
-      avatar:
-        "https://img.freepik.com/free-psd/3d-illustration-person-with-sunglasses_23-2149436188.jpg",
-    }}
-    date="13 Aug 2024"
-    tags={["Celebs", "Health", "Summer"]}
-    heading="How Going Alcohol-Free Fuels Lewis Hamilton's Drive"
-    summary="Over a glass of his alcohol-free tequila, GOAT Lewis Hamilton tells us how going AF improves his performance. Bonus: he shares with us his go-to drinks for a hot summer's day!"
-    image={lewisHamilton}
-    imageAlt="Lewis Hamilton drinking a non-alcoholic drink"
-  />
+  <MasonryGrid gridItems={blogItems} />
 </Layout>
