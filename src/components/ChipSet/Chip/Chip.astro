@@ -1,0 +1,21 @@
+---
+import Text from "@components/Text/Text.astro";
+
+import styles from "./Chip.module.css"
+
+import type { HTMLAttributes } from "astro/types";
+
+export interface ChipProps extends HTMLAttributes<'div'> {
+    text: string;
+    index: number;
+}
+
+const props = Astro.props as ChipProps;
+
+const colourClass = styles[`colourSet${props.index}`]
+
+---
+
+<div class:list={["flex-center", styles.chip, colourClass]}>
+    <Text class:list={["body-sm"]}>{props.text}</Text>
+</div>

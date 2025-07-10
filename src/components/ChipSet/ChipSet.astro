@@ -1,0 +1,16 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import Chip from "./Chip/Chip.astro";
+import styles from "./ChipSet.module.css"
+
+export interface ChipSetProps extends HTMLAttributes<'div'> {
+    chips: string[]
+}
+
+const props = Astro.props as ChipSetProps;
+---
+
+<div class:list={["flex", styles.chipSet]}>
+    {props.chips.map((chip: string, index: number) => <Chip text={chip} index={index} />)}
+</div>
