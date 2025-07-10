@@ -1,0 +1,37 @@
+.outerCard {
+    background-color: aliceblue;
+    border-radius: var(--grid-unit);
+     max-width: 400px;
+    max-height: 1000px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.imageContainer {
+   max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    height: 50%;
+}
+
+.image {
+    height: auto;
+    max-width: 100%;
+}
+
+.detailsContainer {
+    padding: var(--grid-unit);
+    gap: var(--grid-unit);
+}
+
+.avatar {
+    border-radius: 50%;
+}
+
+.authorDetailsContainer {
+    gap: var(--grid-unit);
+    padding: var(--grid-unit) 0;
+
+}
