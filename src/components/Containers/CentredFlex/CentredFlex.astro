@@ -2,14 +2,15 @@
 import "@styles/global.css"
 import type { HTMLAttributes } from "astro/types";
 
+import styles from "./CentredFlex.module.css"
+
 export interface CentredFlexProps extends HTMLAttributes<'section'> {
-  
 };
 
 const props = Astro.props as CentredFlexProps
 
 ---
 
-<section class:list={["flex-col", "flex-center", props.class]} style={props.style}>
+<section class:list={["flex-col", "flex-center", styles.container, props.class]} style={props.style}>
   <slot />
 </section>

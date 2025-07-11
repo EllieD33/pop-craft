@@ -1,8 +1,8 @@
 ---
 import Layout from "@layouts/BaseLayout.astro";
 import siteConfig from "@content/siteConfig";
-import FlexGallery from "@components/Gallery/FlexGallery.astro";
-import RecipeCard from "@components/RecipeCard/RecipeCard.astro";
+import FlexGallery from "@components/Galleries/FlexGallery/FlexGallery.astro";
+import RecipeCard from "@components/Cards/RecipeCard/RecipeCard.astro";
 import ImageHero from "@components/Heroes/ImageHero/ImageHero.astro";
 import Text from "@components/Text/Text.astro";
 import Typewriter from "@components/animations/Typewriter/Typewriter.astro";
@@ -30,7 +30,6 @@ import CentredFlex from "@components/Containers/CentredFlex/CentredFlex.astro";
       />
     </div>
   </ImageHero>
-  <!-- <ColourBlock colour="white"> -->
   <CentredFlex style={{paddingTop: "40px"}}>
     <Text as="h2" variant="heading2" class="text-centred">Trending Recipes</Text
     >
@@ -71,7 +70,6 @@ import CentredFlex from "@components/Containers/CentredFlex/CentredFlex.astro";
       />
     </FlexGallery>
   </CentredFlex>
-  <!-- </ColourBlock> -->
    <div style={{paddingTop: "40px"}}>
      <Marqee />
    </div>

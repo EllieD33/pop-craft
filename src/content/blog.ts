@@ -13,5 +13,5 @@ export const blogItems = Array.from({ length: 9 }, (_, i) => ({
     "Over a glass of his alcohol-free tequila, GOAT Lewis Hamilton tells us how going AF improves his performance. Bonus: he shares with us his go-to drinks for a hot summer's day!",
   image: lewisHamilton,
   imageAlt: "Lewis Hamilton drinking a non-alcoholic drink",
-  ...(i !== 0 && i !== 4 ? { wide: true } : {}),
+  ...(i !== 0 && i !== 4 && i !== 6 ? { wide: true } : {}),
 }));

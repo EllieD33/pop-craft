@@ -4,8 +4,20 @@ import Layout from "@layouts/BaseLayout.astro";
 import siteConfig from "@content/siteConfig";
 import { blogItems } from "@content/blog";
 import MasonryGrid from "@components/Galleries/MasonryGrid/MasonryGrid.astro";
+import CentredFlex from "@components/Containers/CentredFlex/CentredFlex.astro";
+import Text from "@components/Text/Text.astro";
 ---
 
 <Layout title={siteConfig.title}>
-  <MasonryGrid gridItems={blogItems} />
+  <CentredFlex style={{ gap: "calc(var(--grid-unit) * 2)" }}>
+    <Text as="h1" variant="heading1" class="text-centred"
+      >Life, Alcohol-Free</Text
+    >
+    <Text colourOverride="white" class="text-centred"
+      >Explore stories, interviews, and insights on living well without the
+      booze. <br/> From inspiring journeys to lifestyle tips, this is your space for
+      mindful, modern living — no hangover required.</Text
+    >
+    <MasonryGrid gridItems={blogItems} />
+  </CentredFlex>
 </Layout>

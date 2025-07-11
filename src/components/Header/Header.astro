@@ -3,14 +3,18 @@ import Hamburger from "./Hamburger/Hamburger.astro";
 import Navigation from "./Navigation/Navigation.astro";
 import "@styles/global.css";
 import styles from "./Header.module.css";
-const { title = "My Site" } = Astro.props;
+import { Image } from "astro:assets";
+import logo from "@assets/android-chrome-192x192.png";
 ---
 
 <header>
   <nav class={styles.navContainer}>
     <Hamburger />
     <Navigation />
-    <div class={styles.siteNameContainer}><a class=`heading-xl ${styles.siteName}` href="/">{title}</a></div>
+    <div class={styles.siteNameContainer}>
+      <a class=`heading-xl ${styles.siteName}` href="/"
+        ><Image height={48} width={48} src={logo} alt={"logo"} /></a>
+    </div>
   </nav>
   <div class="" id="navShadow"></div>
 </header>
