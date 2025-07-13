@@ -3,6 +3,7 @@ import Header from "@components/Header/Header.astro";
 import "@styles/global.css";
 import "@styles/nav.css";
 import siteConfig from "@content/siteConfig";
+import Footer from "@components/Footer/Footer.astro";
 const { title = "My Site" } = Astro.props;
 ---
 
@@ -30,6 +31,7 @@ const { title = "My Site" } = Astro.props;
     <main>
       <slot />
     </main>
+    <Footer />
     <script is:inline>
       const icon = document.getElementById("hamburger");
       const icon1 = document.getElementById("lineA");

@@ -1,0 +1,39 @@
+---
+import Navigation from "@components/Header/Navigation/Navigation.astro";
+import TikTok from "@components/icons/TikTok.astro";
+import YouTube from "@components/icons/YouTube.astro";
+import Instagram from "@components/icons/Instagram.astro";
+import Link from "@components/Link/Link.astro";
+import Text from "@components/Text/Text.astro";
+
+import styles from "./Footer.module.css";
+
+import siteConfig from "@content/siteConfig";
+import RectLight from "@components/backgrounds/RectLight.astro";
+import Divider from "@components/Divider/Divider.astro";
+
+const year = new Date().getFullYear();
+
+const iconColour = "#fff";
+const iconSize = 32;
+---
+
+<footer class:list={["flex-center flex-col", styles.footer]}>
+  <Divider />
+  <div class:list={["flex-center", styles.socials]}>
+    <Link href="https://www.tiktok.com/" class={styles.socialIcon}>
+      <TikTok colour={iconColour} size={iconSize} />
+    </Link>
+    <Link href="https://www.youtube.com/" class={styles.socialIcon}>
+      <YouTube colour={iconColour} size={iconSize} />
+    </Link>
+    <Link href="https://www.instagram.com/" class={styles.socialIcon}>
+      <Instagram colour={iconColour} size={iconSize} />
+    </Link>
+  </div>
+  <nav>
+    <Navigation />
+  </nav>
+  <Text colourOverride="white">{siteConfig.title} © {year}</Text>
+  <RectLight />
+</footer>

@@ -1,0 +1,16 @@
+.divider {
+  border: none;
+  height: 4px;
+  width: 80%;
+  margin: 2em auto;
+  border-radius: 2px;
+  background: linear-gradient(
+    90deg,
+    rgba(85, 255, 170, 0.8) 0%,
+    rgba(85, 255, 170, 0.4) 50%,
+    rgba(85, 255, 170, 0.8) 100%
+  );
+  box-shadow:
+    0 0 10px rgba(85, 255, 170, 0.6),
+    0 0 20px rgba(85, 255, 170, 0.3);
+}

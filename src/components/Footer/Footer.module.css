@@ -1,0 +1,17 @@
+.footer {
+  height: 400px;
+  gap: 24px;
+  padding-top: 24px;
+}
+
+.socials {
+  gap: 24px;
+}
+
+.socialIcon {
+  transition: transform 0.3s ease;
+}
+
+.socialIcon:hover {
+  transform: scale(1.2);
+}

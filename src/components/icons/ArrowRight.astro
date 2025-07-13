@@ -1,15 +1,13 @@
 ---
-import type { HTMLAttributes } from 'astro/types';
+import type { IconProps } from "src/types/types";
 
-export interface IconProps extends HTMLAttributes<'svg'> {}
-
-const { class: className = '', ...rest } = Astro.props as IconProps;
+const { class: className = '', size = 24, ...rest } = Astro.props as IconProps;
 ---
 
 <svg
   xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
+  width={size}
+  height={size}
   fill="none"
   viewBox="0 0 24 24"
   stroke="currentColor"
