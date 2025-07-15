@@ -65,6 +65,7 @@
 
 .headingText {
   color: var(--color-accent);
+  letter-spacing: normal;
 }
 
 .image {
@@ -85,4 +86,29 @@
 
 .recipeCardWrapper:hover .icon {
   transform: translateX(8px);
+}
+
+@media (max-width: 1320px) {
+  .recipeCardWrapper {
+    height: auto;
+  }
+.recipeCardContents {
+  flex-direction: column;
+  max-width: 360px ;
+  height: 100%;
+}
+.recipeCardLeft {
+  align-items: center;
+  flex-direction: column-reverse;
+  gap: var(--grid-unit);
+}
+.image {
+  border-radius: 20px;
+  width: 100%;
+  object-fit: cover;
+}
+.recipeTextContent {
+  justify-content: space-between;
+  height: 100%;
+}
 }
