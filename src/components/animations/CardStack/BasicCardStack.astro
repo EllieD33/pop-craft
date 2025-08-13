@@ -1,0 +1,150 @@
+---
+
+---
+<style>
+
+.container {
+  max-width: 40em;
+  margin: 0 auto;
+}
+
+.cards {
+  width: 100%;
+  padding: 1em;
+  border-radius: 1em;
+  background-color: #ffbfa6;
+}
+
+.cards + .cards {
+  margin-top: 1em;
+}
+
+.card {
+  padding: 1.5em;
+  border-radius: 1em;
+  background-color: red;
+  position: sticky;
+  top: 100px;
+}
+
+.card + .card {
+  margin-top: 1em;
+}
+
+.card:nth-child(1) {
+  background-color: #ff6b30;
+}
+
+.card:nth-child(2) {
+  background-color: #ffa630;
+}
+
+.card:nth-child(3) {
+  background-color: #e52b63;
+}
+
+.card:nth-child(4) {
+  background-color: #ff8656;
+}
+
+.card:nth-child(5) {
+  background-color: #ffb756;
+}
+
+.card:nth-child(6) {
+  background-color: #ea4f7e;
+}
+
+.card__title {
+  margin-top: 0;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.card__text {
+  margin-bottom: 0;
+  font-family: "Lora", serif;
+}
+
+</style>
+
+<div class="container">
+  <div class="cards">
+    <div class="card">
+      <h3 class="card__title">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit
+      </h3>
+      <p class="card__text">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui nihil,
+        quaerat id odit, architecto fugit laborum, nemo repudiandae sint quas
+        distinctio nam quae deleniti natus perferendis recusandae adipisci odio.
+        Maxime.
+      </p>
+    </div>
+    <div class="card">
+      <h3 class="card__title">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit
+      </h3>
+      <p class="card__text">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui nihil,
+        quaerat id odit, architecto fugit laborum, nemo repudiandae sint quas
+        distinctio nam quae deleniti natus perferendis recusandae adipisci odio.
+        Maxime.
+      </p>
+    </div>
+    <div class="card">
+      <h3 class="card__title">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit
+      </h3>
+      <p class="card__text">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui nihil,
+        quaerat id odit, architecto fugit laborum, nemo repudiandae sint quas
+        distinctio nam quae deleniti natus perferendis recusandae adipisci odio.
+        Maxime.
+      </p>
+    </div>
+    <div class="card">
+      <h3 class="card__title">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit
+      </h3>
+      <p class="card__text">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui nihil,
+        quaerat id odit, architecto fugit laborum, nemo repudiandae sint quas
+        distinctio nam quae deleniti natus perferendis recusandae adipisci odio.
+        Maxime.
+      </p>
+    </div>
+    <div class="card">
+      <h3 class="card__title">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit
+      </h3>
+      <p class="card__text">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui nihil,
+        quaerat id odit, architecto fugit laborum, nemo repudiandae sint quas
+        distinctio nam quae deleniti natus perferendis recusandae adipisci odio.
+        Maxime.
+      </p>
+    </div>
+    <div class="card">
+      <h3 class="card__title">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit
+      </h3>
+      <p class="card__text">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui nihil,
+        quaerat id odit, architecto fugit laborum, nemo repudiandae sint quas
+        distinctio nam quae deleniti natus perferendis recusandae adipisci odio.
+        Maxime.
+      </p>
+    </div>
+  </div>
+</div>
+<script>
+    const cardBlocks = document.querySelectorAll(".cards");
+
+cardBlocks.forEach((cardBlock) => {
+  cardBlock.style.paddingBottom = `${Math.max(cardBlock.children.length, 1)}em`;
+
+  Array.from(cardBlock.children).forEach(
+    (card, i) => (card.style.transform = `translateY(${i}em)`)
+  );
+});
+</script>

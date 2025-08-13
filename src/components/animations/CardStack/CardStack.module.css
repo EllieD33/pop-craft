@@ -1,0 +1,57 @@
+.layout {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  font-family: sans-serif;
+}
+
+.fixedPane {
+  width: 300px;
+  padding: 2rem;
+  background: #f3f3f3;
+  border-right: 1px solid #ddd;
+  box-sizing: border-box;
+}
+
+.stackWrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.cardsViewport {
+  position: relative;
+  width: 420px;
+  height: 80vh;
+  overflow-y: scroll;
+  padding: 2rem 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.cards {
+  position: relative;
+}
+
+.card {
+  position: relative;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  height: 300px;
+  margin-bottom: 60px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  will-change: transform, filter;
+}
+
+.card__inner {
+  height: 100%;
+  padding: 2rem;
+  box-sizing: border-box;
+  pointer-events: none;
+  user-select: none;
+}
