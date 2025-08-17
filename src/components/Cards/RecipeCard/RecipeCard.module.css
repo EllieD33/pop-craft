@@ -1,5 +1,5 @@
 .recipeCardWrapper {
-  max-width: 40%;
+  max-width: 600px;
   padding: calc(var(--grid-unit) * 2);
   background-color: aliceblue;
   box-shadow: 0 6px 20px rgba(0, 64, 128, 0.12);

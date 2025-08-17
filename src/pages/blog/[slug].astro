@@ -1,0 +1,23 @@
+---
+import { getCollection, getEntry, render } from 'astro:content';
+import BlogPostLayout from '@layouts/BlogPostLayout.astro';
+
+import '@components/Cards/RecipeCard/RecipeCard.module.css';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { slug } = Astro.params;
+
+const entry = await getEntry('blog', Astro.params.slug);
+if (!entry) throw new Error('Post not found');
+
+const { Content } = await render(entry);
+---
+
+<BlogPostLayout post={entry} Content={Content} />

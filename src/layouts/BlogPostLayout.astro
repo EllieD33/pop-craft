@@ -1,0 +1,22 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import styles from "./BlogPostLayout.module.css"
+
+const { post, Content } = Astro.props;
+---
+
+<BaseLayout>
+    <h1>{post.data.heading}</h1>
+    <p class="text-sm text-gray-500">
+      {post.data.author.name} — {post.data.date}
+    </p>
+    <img 
+      src={post.data.image} 
+      alt={post.data.imageAlt} 
+      class="mt-4 rounded-lg shadow-md"
+    />
+
+    <article style={{maxWidth: "900px", margin: "0 auto"}} class={styles.content} >
+        <Content />
+    </article>
+</BaseLayout>

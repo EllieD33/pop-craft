@@ -1,0 +1,21 @@
+---
+heading: "My First Blog Post with Components"
+summary: "This is my first MDX post with a component."
+date: "2025-08-13"
+author:
+  name: "James Hughes"
+  avatar: "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
+tags: ["Astro", "MDX"]
+image: "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
+imageAlt: "Sample image"
+---
+
+import RecipeCard from "/Users/ellendaly/Programming/mocktail-site/src/components/Cards/RecipeCard/RecipeCard.astro"
+
+# Hello Markdown
+
+This is normal Markdown content.
+
+<RecipeCard heading="Card heading" description="Lorem ipsum dolor" tags={["tag"]} imageSrc={"https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"} imageAltText="Image Alt Text example" pageURL="https://google.com" />
+
+Some more Markdown content here.
